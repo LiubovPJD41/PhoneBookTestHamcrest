@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.annotation.Testable;
 
 
+import java.util.Set;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.nullValue;
@@ -51,6 +53,16 @@ public class PhoneBookTest {
     }
 
     @Test
+    public void findUsePhoneNumberTest() {
+        Contact contact = phoneBook.findUsePhoneNumber("89183380985");
+        assertThat(contact, nullValue());
+    }
 
     @Test
+    public void getGroupNameTest() {
+        Set<String> groupName = phoneBook.getGroupName();
+        assertThat(groupName.size(), equalTo(0));
+    }
+
+
 }
